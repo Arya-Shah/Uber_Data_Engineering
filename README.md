@@ -71,3 +71,60 @@ GROUP BY
 ORDER BY 
     trip_count DESC
 LIMIT 10;
+
+```
+
+### **2. Find the total number of trips by passenger count **
+```sql
+select b.passenger_count, count(*) as Total_Trips
+
+from uberdataengineering-222025.uberDataEngineering.fact_table a
+
+join uberdataengineering-222025.uberDataEngineering.passenger_count_dim b
+
+on a.passenger_count_id = b.passenger_count_id
+
+group by b.passenger_count
+
+order by Total_Trips desc
+
+```
+### **3. Find the average fare amount by hour of the day**
+```sql
+select avg(a.fare_amount) as Average_Fare, b.pick_hour as Pick_hour
+
+from uberdataengineering-222025.uberDataEngineering.fact_table a
+
+join uberdataengineering-222025.uberDataEngineering.datetime_dim b
+
+on a.datetime_id = b.datetime_id
+
+group by b.pick_hour
+
+order by Pick_hour asc
+
+```
+### **4. What is the average tip amount for each payment type?**
+```sql
+select b.payment_type_name, avg(a.tip_amount) from uberdataengineering-222025.uberDataEngineering.fact_table a
+
+join uberdataengineering-222025.uberDataEngineering.payment_type_dim b
+
+ON a.payment_type_id = b.payment_type_id
+
+group by b.payment_type_name
+
+```
+---
+
+## 📜 Lessons Learned
+
+### ✅ Successes
+- Successfully developed an **end-to-end data pipeline**, integrating **ETL, cloud storage, and data visualization**.
+- Optimized **query performance** using a **star schema model** for analytical workloads.
+- Delivered an **interactive dashboard** for **quick and meaningful insights**.
+
+### ⚠️ Challenges
+- Managing **large datasets** in **Looker Studio** required **pre-aggregating data** to avoid performance issues.
+- Addressing **missing or null values** (e.g., latitude/longitude) required thorough **data cleaning**.
+- Ensuring **seamless integration** across multiple **Google Cloud services** required **fine-tuned configuration**.
