@@ -19,7 +19,7 @@ The **final output** is a **fully interactive dashboard** in **Looker Studio**, 
 - **Python (Pandas, SQLAlchemy)** → Data transformation  
 - **SQL (BigQuery SQL)** → Querying transformed data  
 - **Looker Studio** → Interactive dashboard
-  <img width="601" alt="Pasted image 20250204001823" src="https://github.com/user-attachments/assets/922fd287-7584-4507-b114-2fbff2e47904" />
+- <img width="601" alt="Pasted image 20250204001823" src="https://github.com/user-attachments/assets/922fd287-7584-4507-b114-2fbff2e47904" />
 ---
 ## **📌 Project Workflow**
 ### **1️⃣ Data Ingestion**
